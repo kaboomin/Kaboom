@@ -18,9 +18,9 @@ pipeline {
         stage('Docker installing') {
             steps {
               // Installing doker.
-              sh "sudo yum update"
-              sh "sudo yum remove -y docker docker-engine docker.io"
-              sh "sudo yum install -y docker.io"
+              sh "sudo apt-get update"
+              sh "sudo apt-get remove -y docker docker-engine docker.io"
+              sh "sudo apt-get install -y docker.io"
               sh "sudo docker --version"
               echo " Buidnumber ${env.BUILD_NUMBER} Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
@@ -35,7 +35,7 @@ pipeline {
 
         stage('Push Docker image') {
             steps { 
-               ///withCredentials([string(credentialsId: 'Dockerpass', variable: 'Dockerhub')]) {
+               //withCredentials([string(credentialsId: 'Dockerpass', variable: 'Dockerhub')]) {
               //sh "sudo docker login -u rahulinti123 -p ${Dockerhub}"
                //sh "sudo docker push rahulinti123/my-app:${env.BUILD_NUMBER}"
                sh "sudo docker run -p 8088:8080 -d rahulinti123/my-app:${env.BUILD_NUMBER}"
