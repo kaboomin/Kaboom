@@ -17,9 +17,9 @@ pipeline {
         stage('Docker installing') {
             steps {
               // Installing doker.
-              //sh "sudo apt-get update"
-              //sh "sudo apt-get remove -y docker docker-engine docker.io"
-              //sh "sudo apt install -y docker.io"
+              sh "sudo apt-get update"
+              sh "sudo apt-get remove -y docker docker-engine docker.io"
+              sh "sudo apt install -y docker.io"
               sh "sudo docker --version"
               echo " Buidnumber ${env.BUILD_NUMBER} Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
