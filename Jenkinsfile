@@ -5,7 +5,7 @@ pipeline {
         stage('Clone') {
             steps {
               // Get some code from a GitHub repository
-              git 'https://github.com/kaboom/kaboomin.git'  
+              git 'https://github.com/kaboomin/kaboom.git'  
             }
         }
         stage('Build') {
