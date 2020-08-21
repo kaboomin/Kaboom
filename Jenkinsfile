@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
               // Run Maven on a Unix agent.
-              sh "mvn clean install"
+              sh "mvn -Dmaven.test.failure.ignore=true clean install"
             }
         }
         stage('Docker installing') {
