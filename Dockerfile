@@ -10,6 +10,6 @@ RUN rm -rf /usr/local/tomcat/webapps/manager/META-INF/context.xml
 ADD tomcat-users.xml /usr/local/tomcat/conf/
 ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/
 RUN mkdir /usr/local/tomcat/webapps/Ganmeoflife
-ADD ./target/SampleCode-1.0.jar /usr/local/tomcat/webapps/Ganmeoflife/
+ADD /var/lib/jenkins/workspace/test/target/sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/Ganmeoflife/
 EXPOSE 8080
 CMD sh /usr/local/tomcat/bin/catalina.sh run
