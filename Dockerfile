@@ -9,7 +9,7 @@ RUN rm -rf /usr/local/tomcat/conf/tomcat-users.xml
 RUN rm -rf /usr/local/tomcat/webapps/manager/META-INF/context.xml
 ADD tomcat-users.xml /usr/local/tomcat/conf/
 ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/
-RUN mkdir /usr/local/tomcat/webapps/Ganmeoflife
-COPY /var/lib/jenkins/workspace/warfile/target/sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/Ganmeoflife/
+RUN mkdir /usr/local/tomcat/webapps/Ganmeoflife 
+COPY ./sparkjava-hello-world-1.0.war /usr/local/tomcat/webapps/Ganmeoflife/
 EXPOSE 8080
 CMD sh /usr/local/tomcat/bin/catalina.sh run
